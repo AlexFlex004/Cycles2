@@ -86,7 +86,7 @@ public class Main {
         money = 15000;
         monthTwo = 0;
         int year = 0;
-        for (year = 0; year <= 9; year = year++) {
+        for (year = 0; year <= 9; year = year + 1) {
             while (year < 9) {
                 money = (int) (money + money * percent);
                 monthTwo++;
