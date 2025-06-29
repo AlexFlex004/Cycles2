@@ -8,10 +8,11 @@ public class Main {
         int result = 2_459_000;
         int savings = 15000;
         int month = 0;
+        int total = 0;
 
-        while (month * savings <= result) {
+        while (total <= result) {
             month++;
-            int total = month * savings;
+            total = month * savings;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
             System.out.println("     ");
         }
@@ -19,14 +20,14 @@ public class Main {
 
         //CASE2//
         System.out.println("CASE 2");
-        int start = 1;
-        while (start > 0 && start < 11) {
+        int start = 0;
+        while (start < 11) {
+            start++;
             System.out.print(start + " ");
-            start = start + 1;
+
         }
         System.out.println();
-        int startTwo = 10;
-        for (; startTwo > 0 && startTwo < 11; startTwo--) {
+        for (int startTwo = 10; startTwo > 0 && startTwo < 11; startTwo--) {
             System.out.print(startTwo + " ");
         }
         System.out.println("     ");
@@ -40,10 +41,10 @@ public class Main {
         int dead = 8;
         int amount = 1000;
         int years = 0;
+
         while (years < 10) {
             years++;
-            totalPop = totalPop + ((born - dead) * 1000);
-            int total = month * savings;
+            totalPop = totalPop + ((born - dead) * amount);
             System.out.println("Год " + years + ", численность населения составляет " + totalPop);
             System.out.println("     ");
         }
@@ -52,7 +53,7 @@ public class Main {
         //CASE4//
         System.out.println("     ");
         System.out.println("CASE 4");
-        int resultTwo = 12_000_000;
+
         int money = 15000;
         float percent = 0.07F;
         int monthTwo = 0;
@@ -85,7 +86,7 @@ public class Main {
         money = 15000;
         monthTwo = 0;
         int year = 0;
-        for (year = 0; year <= 9; year = year + 1) {
+        for (year = 0; year <= 9; year = year++) {
             while (year < 9) {
                 money = (int) (money + money * percent);
                 monthTwo++;
@@ -104,17 +105,16 @@ public class Main {
         //CASE7//
         System.out.println("CASE 7");
         int friday = 5;
-        int day = 0;
-        for (day = 0; day <= 31; day = day + 1) {
-            while (day < 31) {
-                day++;
+        int day = friday;
+        System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчет");
+        for ( ; day <= 31; ) {
+            day++;
+            if ((day-friday) % 7 == 0) {
+                System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет");
+                System.out.println("     ");
 
-                if (day % friday == 0) {
-                    System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет");
-                    System.out.println("     ");
-                    break;
-                }
             }
+
         }
 
 
