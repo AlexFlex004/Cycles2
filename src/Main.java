@@ -98,11 +98,12 @@ public class Main {
             int year = 0;
             int total = money;
             float percent = 0.07F;
-            for (year = 1; year <= 9; year++) {
-                for (monthTwo = 1; monthTwo <= 6; monthTwo++) {
-                    total += (int) (total * percent);
+            for (monthTwo = 1; monthTwo <= 54; monthTwo++) {
+                total += (int) (total * percent);
+                if (monthTwo % 6 == 0) {
+                    int halfYear = monthTwo / 6;
+                    System.out.println("Полгода " + halfYear + ", сумма накоплений равна " + total);
                 }
-                System.out.println("Полгода " + year + ", сумма накоплений равна " + total);
             }
             System.out.println();
         }
